@@ -7,9 +7,13 @@ metadata:
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: node-express
     apps.tanzu.vmware.com/has-tests: true
-  annotations: 
-    autoscaling.knative.dev/minScale: 1
+
 spec:
+
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
   source:
     git:
       ref:
